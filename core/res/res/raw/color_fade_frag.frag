@@ -35,8 +35,8 @@ vec3 hsl2rgb(vec3 hsl)
 
 void main()
 {
-    //vec4 color = texture2D(texUnit, UV);
-    //vec3 hsl = rgb2hsl(color.xyz);
-    //vec3 rgb = pow(hsl2rgb(vec3(hsl.x, hsl.y * saturation, hsl.z * opacity)), vec3(gamma));
-    gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);
+    vec4 color = texture2D(texUnit, UV);
+    vec3 hsl = rgb2hsl(color.xyz);
+    vec3 rgb = pow(hsl2rgb(vec3(hsl.x, hsl.y * saturation, hsl.z * opacity)), vec3(gamma));
+    gl_FragColor = vec4(rgb, 1.0);
 }
